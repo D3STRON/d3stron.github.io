@@ -71,7 +71,7 @@
           <li><a href="#about"><span>About</span></a></li>
           <li><a href="#education"> <span>Education</span></a></li>
           <li><a href="#experience"> <span>Experience</span></a></li>
-<!--          <li><a href="#projects"> <span>Projects</span></a></li>-->
+         <li><a href="#publications" id="publications_sec"> <span>Publications</span></a></li>
           <li><a href="#portfolio"> <span>Projects</span></a></li>
           <li><a href="#skills"> <span>Skills</span></a></li>
           <li><a href="./assets/resume/AnuragGhosh_Resume_main.pdf" target="_blank"> <span>Resume</span></a></li>
@@ -536,6 +536,30 @@
   <!-- End Project Section -->
 
 
+  <section id="publications" class="publications">
+
+    <!-- ======= About Me ======= -->
+    <div class="publications container">
+        <div class="section-title">
+            <h2>Publications</h2>
+        </div>
+
+        <!-- Publication Entry -->
+        <div class="publication-entry">
+            <h3>Hybrid Image Encryption Technique Using Genetic Algorithm and Lorenz Chaotic System</h3>
+            <p><strong>Published in:</strong> ITM Web of Conferences 32, 03009 (2020)</p>
+            <div class="animation-section">
+              <img id="encrypting-image" src="./assets/img/project/blog.jpg" alt="Image being encrypted">
+            </div>
+            <p><strong>Abstract:</strong> One of the important application of image encryption is storing confidential and important images on a local device or a database in such a way that only the authorized party can view or perceive it. The current image encryption technique employs the genetic algorithm to increase confusion in the image, but compromises in time and space complexity. The other method employs chaos or pseudo random number generating systems which have fast and highly sensitive keys but fails to make the image sufficiently noisy and is risky due to its deterministic nature. We propose a technique which employs the non-deterministic, optimizing power of genetic algorithm and the space efficiency and key sensitivity of chaotic systems into a unified, efficient algorithm which will retain the merits of both the methods whereas tries to minimize their demerits in a software system. The encryption process proceeds in two steps, generating two keys. First, an encryption sequence is generated using Lorenz Chaotic system of differential equation. The seed values used are the user’s actual key having key sensitivity of 10-14. Second, the encrypted image’s genetic encryption sequence is generated which will result in an encrypted image with entropy value greater than 7.999 thus ensuring the image is very noisy. Proposed technique uses variations of Lorenz system seed sets to generate all random mutations and candidate solutions in Genetic encryption. Since only the seed sets leading to desired solution is stored, space efficiency is higher compared to storing the entire sequences. Using this image encryption technique we will ensure that the images are hidden securely under two layers of security, one chaotic and other non-deterministic.</p>
+            <p><strong>Link to Publication:</strong> 
+                <a href="https://doi.org/10.1051/itmconf/20203203009" target="_blank">View Publication</a>
+            </p>
+        </div>
+
+        <!-- Encrypting Image Animation -->
+    </div>
+</section>
 
   <!-- Start Skills Section -->
 
@@ -678,6 +702,63 @@
   <!-- End Contact Section -->
 
   <!-- Vendor JS Files -->
+
+  <script>
+    window.onload = function() {
+        const section = document.getElementById("publications_sec");
+        const image = document.getElementById("encrypting-image");
+
+        // Listen for a click event on the publications section
+        section.addEventListener("click", function() {
+            image.style.animationPlayState = "running"; // Start the animation on click
+        });
+
+        // Initially, pause the animation
+        image.style.animationPlayState = "paused";
+    };
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .publications {
+        padding: 20px;
+        background-color: #000000;
+    }
+    .publication-entry {
+        margin-bottom: 30px;
+    }
+    .animation-section {
+        text-align: center;
+        margin-top: 20px;
+    }
+    /* Apply the animation only to the specific image */
+    #encrypting-image {
+        max-width: 500px;
+        animation: encrypt 4s forwards;
+        animation-play-state: paused; /* Initially paused */
+    }
+    @keyframes encrypt {
+        0% {
+            filter: none;
+        }
+        25% {
+            filter: blur(2px);
+        }
+        50% {
+            filter: blur(5px) brightness(80%);
+        }
+        75% {
+            filter: blur(8px) brightness(60%) grayscale(50%);
+        }
+        100% {
+            filter: blur(12px) brightness(40%) grayscale(100%);
+        }
+    }
+</style>
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
